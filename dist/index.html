@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SliceLab — WebGL Mesh Cutter</title>
+    <script type="module" crossorigin src="./assets/index-CcfXrs2f.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BDUPDu_J.css">
+  </head>
+  <body>
+    <!-- Main 3D viewport -->
+    <canvas id="viewport"></canvas>
+
+    <!-- SVG overlay for cut preview line -->
+    <svg id="cut-overlay" xmlns="http://www.w3.org/2000/svg">
+      <line id="cut-line" x1="0" y1="0" x2="0" y2="0" />
+    </svg>
+
+    <!-- HUD shown after Start -->
+    <div id="hud" class="hidden">
+      <div id="mode-hud" class="mode-navigate">
+        <span class="mode-label">MODE</span>
+        <span id="mode-value">Navigate</span>
+        <span class="mode-hint">(C to toggle Cut · drag to slice)</span>
+      </div>
+
+      <div id="shape-switcher">
+        <span class="switcher-label">SHAPE</span>
+        <button data-shape="cube">Cube</button>
+        <button data-shape="sphere">Sphere</button>
+        <button data-shape="torus">Torus</button>
+        <button data-shape="cylinder">Cylinder</button>
+        <button id="reset-btn" title="Reset scene">Reset</button>
+      </div>
+
+      <div id="help">
+        <div><b>Navigate</b> — LMB orbit · RMB pan · wheel zoom</div>
+        <div><b>Cut</b> — drag across the mesh to slice it with a plane</div>
+        <div><b>Drag pieces</b> — LMB drag any piece in Navigate mode</div>
+      </div>
+    </div>
+
+    <!-- Title / landing screen -->
+    <div id="title-screen">
+      <div class="title-card">
+        <h1>SliceLab</h1>
+        <p class="subtitle">A WebGL mesh cutting playground</p>
+        <p class="desc">
+          Drag a cut across any mesh and watch it split into independent
+          pieces. Built from scratch on raw WebGL2.
+        </p>
+        <button id="start-btn">Start</button>
+        <p class="credits">vite · typescript · webgl2</p>
+      </div>
+    </div>
+
+  </body>
+</html>
