@@ -34,9 +34,9 @@ export class Engine {
     this.gl = gl;
 
     gl.enable(gl.DEPTH_TEST);
-    gl.enable(gl.CULL_FACE);
-    gl.cullFace(gl.BACK);
-    gl.frontFace(gl.CCW);
+    // gl.enable(gl.CULL_FACE);
+    // gl.cullFace(gl.BACK);
+    // gl.frontFace(gl.CCW);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.clearColor(0.043, 0.051, 0.07, 1);
@@ -89,7 +89,7 @@ export class Engine {
     gl.enable(gl.DEPTH_TEST);
     gl.depthMask(true);
     gl.disable(gl.BLEND);
-    gl.enable(gl.CULL_FACE);
+    //gl.enable(gl.CULL_FACE);
 
     this.phong.use();
     this.phong.setMat4("u_view", scene.camera.viewMatrix);
@@ -113,7 +113,7 @@ export class Engine {
     }
 
     // ---- grid ----
-    gl.disable(gl.CULL_FACE);
+    //gl.disable(gl.CULL_FACE);
     gl.enable(gl.BLEND);
     gl.depthMask(false); // grid is translucent — write color but not depth
     this.grid.use();
@@ -125,6 +125,6 @@ export class Engine {
     gl.bindVertexArray(null);
     gl.depthMask(true);
     gl.disable(gl.BLEND);
-    gl.enable(gl.CULL_FACE);
+    //gl.enable(gl.CULL_FACE);
   }
 }
